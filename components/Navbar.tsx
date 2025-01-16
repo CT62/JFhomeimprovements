@@ -7,13 +7,13 @@ export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     return (
-        <nav className="bg-white border-2 border-x-0 border-t-0 border-black shadow py-2">
+        <nav className="bg-white border-2 border-x-0 border-t-0 border-red-500 shadow-xl py-2">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-16 items-center justify-between">
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                         <button
                             type="button"
-                            className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white"
+                            className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-500 hover:bg-red-500 hover:text-white"
                             aria-controls="mobile-menu"
                             aria-expanded={mobileMenuOpen}
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -42,9 +42,9 @@ export default function Navbar() {
                         </div>
                         <div className="hidden sm:block sm:ml-6">
                             <div className="flex space-x-4">
-                                <Link href="/" className="text-white bg-gray-900 rounded-md px-3 py-2 text-sm font-semibold">Home</Link>
-                                <Link href="/about" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-semibold">About us</Link>
-                                <Link href="/blog" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-semibold">Blog</Link>
+                                <Link href="/" className="text-black border-red-400 hover:bg-red-500 hover:text-white rounded-md px-3 py-2 text-sm font-semibold">Home</Link>
+                                <Link href="/about" className="text-black hover:bg-red-500 hover:text-white rounded-md px-3 py-2 text-sm font-semibold">About us</Link>
+                                <Link href="/blog" className="text-black hover:bg-red-500 hover:text-white rounded-md px-3 py-2 text-sm font-semibold">Blog</Link>
                             </div>
                         </div>
                     </div>
@@ -55,8 +55,7 @@ export default function Navbar() {
                     <div className="space-y-1 px-2 pb-3 pt-2">
                         <Link href="/" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Home</Link>
                         <Link href="/about" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">About Us</Link>
-
-                        <Link href="/blog" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-semibold">Blog</Link>
+                        <Link href="/blog" className="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Blog</Link>
                     </div>
                 </div>
             )}
