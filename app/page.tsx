@@ -1,5 +1,6 @@
 "use client";
 import React from 'react';
+import { TypeAnimation } from 'react-type-animation';
 import { Phone, Mail, Clock, MapPin, Briefcase, Clock4, Handshake } from 'lucide-react';
 
 const HomePage = () => {
@@ -24,21 +25,6 @@ const HomePage = () => {
     }
   };
 
-  const services_sequence = [
-    'Carpentry',
-    2000,
-    'Extensions',
-    2000,
-    'Bathroom Builds',
-    2000,
-    'Tiling',
-    2000,
-    'Plastering',
-    2000,
-    'House Repairs',
-    2000,
-  ];
-
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -54,7 +40,26 @@ const HomePage = () => {
           <p className="text-xl font-semibold mb-8">
             We specialize in{' '}
             <span className="italic">
-              {services[0].title}
+            <TypeAnimation
+                sequence={[
+                  'Carpentry',
+                  2000,
+                  'Extensions',
+                  2000,
+                  'Bathroom Builds',
+                  2000,
+                  'Tiling',
+                  2000,
+                  'Plastering',
+                  2000,
+                  'House Repairs',
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+                style={{ display: 'inline-block' }}
+              />
             </span>
           </p>
           <div className="flex justify-center gap-4">
