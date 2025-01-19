@@ -1,10 +1,19 @@
 "use client";
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 
 export default function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    
+    const navItems = ['Home', 'Services', 'Why Us'];
+    
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+            setMobileMenuOpen(false); // Close mobile menu after clicking
+        }
+    };
 
     return (
         <>
@@ -47,13 +56,15 @@ export default function Navbar() {
                             </div>
                             <div className="hidden sm:block sm:ml-6 mt-1">
                                 <div className="flex space-x-4">
-                                    {['Home', 'Blog'].map((item, index) => (
-                                        <Link key={index} href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '')}`}>
-                                            <span className="relative group text-black border-red-400 px-3 py-2 text-sm font-semibold cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-1">
-                                                {item}
-                                                <span className="absolute left-0 -bottom-1 w-full h-[4px] bg-red-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
-                                            </span>
-                                        </Link>
+                                    {navItems.map((item, index) => (
+                                        <button
+                                            key={index}
+                                            onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
+                                            className="relative group text-black border-red-400 px-3 py-2 text-sm font-semibold cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-1"
+                                        >
+                                            {item}
+                                            <span className="absolute left-0 -bottom-1 w-full h-[4px] bg-red-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
+                                        </button>
                                     ))}
                                 </div>
                             </div>
@@ -63,13 +74,15 @@ export default function Navbar() {
                 {mobileMenuOpen && (
                     <div className="sm:hidden" id="mobile-menu">
                         <div className="space-y-1 px-2 pb-3 pt-2">
-                            {['Home', 'Blog'].map((item, index) => (
-                                <Link key={index} href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '')}`}>
-                                    <span className="relative group text-black font-semibold block rounded-md px-3 py-2 text-base cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-1">
-                                        {item}
-                                        <span className="absolute left-0 -bottom-1 w-full h-[4px] bg-red-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
-                                    </span>
-                                </Link>
+                            {navItems.map((item, index) => (
+                                <button
+                                    key={index}
+                                    onClick={() => scrollToSection(item.toLowerCase().replace(' ', '-'))}
+                                    className="relative group text-black font-semibold block rounded-md px-3 py-2 text-base w-full text-left cursor-pointer transition-all duration-300 ease-in-out hover:-translate-y-1"
+                                >
+                                    {item}
+                                    <span className="absolute left-0 -bottom-1 w-full h-[4px] bg-red-500 scale-x-0 group-hover:scale-x-100 origin-left transition-transform duration-300 ease-out"></span>
+                                </button>
                             ))}
                         </div>
                     </div>
