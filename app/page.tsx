@@ -18,7 +18,7 @@ const HomePage = () => {
     { title: 'Professional services', description: 'We find pride in our ability to keep everything professional.' }
   ];
 
-  const scrollToSection = (sectionId) => {
+  const scrollToSection = (sectionId:string) => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
