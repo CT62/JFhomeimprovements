@@ -34,7 +34,7 @@ const HomePage = () => {
             JF Home Improvements
           </h1>
           <p className="mb-8 text-xl">
-            A family-run business since 2021, delivering quality home renovations 
+            A family-run business since 2022, delivering quality home renovations 
             with years of experience and craftsmanship.
           </p>
           <p className="text-xl font-semibold mb-8">
@@ -181,7 +181,7 @@ const HomePage = () => {
                 <Mail className="w-6 h-6 text-red-500 mr-3" />
                 <div className="text-left">
                   <p className="font-semibold text-black">Email Us</p>
-                  <p className="text-black">jack@jfhomeimprovementss.ie</p>
+                  <p className="text-black">jack@jfhomeimprovements.ltd</p>
                 </div>
               </div>
             </div>
@@ -195,7 +195,7 @@ const HomePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h3 className="text-xl font-bold mb-4">JF Home Improvements</h3>
-              <p className="text-gray-400">Transforming homes with quality craftsmanship since 2021.</p>
+              <p className="text-gray-400">Transforming homes with quality craftsmanship since 2022.</p>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Contact Info</h3>
@@ -206,7 +206,7 @@ const HomePage = () => {
                 </li>
                 <li className="flex items-center gap-2">
                   <Mail className="w-4 h-4" />
-                  jack@jfhomeimprovementss.ie
+                  jack@jfhomeimprovements.ltd
                 </li>
                 <li className="flex items-center gap-2">
                   <MapPin className="w-4 h-4" />
